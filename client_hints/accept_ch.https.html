@@ -1,0 +1,29 @@
+<html>
+<link rel="icon" href="data:;base64,=">
+<head></head>
+<body>
+	<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+
+<script>
+  function run_test() {
+    var test = async_test(document.title, {timeout: 20000})
+    test.step(function() {
+      var client = new XMLHttpRequest()
+      client.onreadystatechange = function() {
+        test.step(function() {
+          if(client.readyState == 4) {
+            assert_equals(client.getResponseHeader("device-memory-received"), "true")
+            test.done()
+          }
+        })
+      }
+      client.open("GET", "../client_hints/echo_header_received.py")
+      client.send(null)
+    })
+  }
+  run_test()
+</script>
+
+</body>
+</html>
