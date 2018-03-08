@@ -45,7 +45,7 @@ def setup_logging(prefix=False):
 setup_logging()
 
 
-ERROR_MSG = """You must fix all errors; for details on how to fix them, see
+ERROR_MSG = """You must  fix all errors; for details on how to fix them, see
 http://web-platform-tests.org/writing-tests/lint-tool.html
 
 However, instead of fixing a particular error, it's sometimes
@@ -54,7 +54,8 @@ web-platform-tests directory to make the lint tool ignore it.
 
 For example, to make the lint tool ignore all '%s'
 errors in the %s file,
-you could add the following line to the lint.whitelist file.
+you could add the following line to the lint.whitelist file. 
+''testing''
 
 %s: %s"""
 
